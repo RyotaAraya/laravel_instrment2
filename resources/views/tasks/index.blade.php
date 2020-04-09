@@ -12,6 +12,12 @@
                     <h3 class="card-title">{{ $task->tag_no }}</h3>
                     <h3 class="card-title">{{ $task->trouble_content }}</h3>
                     <h3 class="card-title">{{ $task->picture1 }}</h3>
+                    <a href="" class="btn btn-primary">{{ __('Go Practice') }}</a>
+                    <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning">{{ __('Go Edit') }}</a>
+                    <form action="{{ route('tasks.delete', $task->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        <button class="btn btn-danger" onclick='return confirm("削除しますか?");'>{{ __('Go Delete') }}</button>
+                    </form>
                 </div>
             </div>
         </div>

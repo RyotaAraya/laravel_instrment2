@@ -82,7 +82,19 @@ class TasksController extends Controller
         $task->delete_flg = 0;
         $task->save();
 
-        //viewにtaskに$taskを詰めて渡す、view側では$taskとして使用可能
         return redirect('/tasks')->with('flash_message', __('Update Registered.'));
+    }
+    public function destroy($id)
+    {
+        //idが数字でなければエラー、事前にチェックしてDBへの無駄なアクセスを減らせる
+        if (!ctype_digit($id)) {
+            return redirect('/tasks/new')->with('flash_message', __('Invalid operation was Performed.'));
+        }
+
+        $task = Task::find($id);
+        $task->delete_flg = 1;
+        $task->save();
+
+        return redirect('/tasks')->with('flash_message', __('Deleted.'));
     }
 }
