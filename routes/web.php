@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/tasks/new', 'TasksController@new')->name('tasks.new');
+Route::post('/tasks', 'TasksController@create')->name('tasks.create');
 
 Auth::routes();
 

@@ -1,0 +1,13 @@
+{
+  "Tasks_Register": "タスク新規登録",
+  "plant_name": "プラント名",
+  "tag_no": "タグナンバー",
+  "trouble_content": "不具合内容",
+  "details_repair": "補修内容",
+  "task_status": "状態",
+  "picture1": "画像1",
+  "picture2": "画像2",
+
+  "Login": "ログイン",
+  "Register": "登録"
+}
