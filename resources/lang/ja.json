@@ -1,5 +1,7 @@
 {
   "Tasks_Register": "タスク新規登録",
+  "Task_List": "タスク一覧",
+
   "plant_name": "プラント名",
   "tag_no": "タグナンバー",
   "trouble_content": "不具合内容",
@@ -9,5 +11,9 @@
   "picture2": "画像2",
 
   "Login": "ログイン",
-  "Register": "登録"
+  "Register": "登録",
+
+  "No data.": "データベースにデータがありません。",
+  "Invalid operation was Performed.": "不正な操作が行われました。",
+  "Update Registered.":"編集完了しました。"
 }
