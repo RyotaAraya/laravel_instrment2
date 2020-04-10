@@ -14,6 +14,7 @@
   "Register": "登録",
 
   "No data.": "データベースにデータがありません。",
+  "Registered.": "新規登録しました。",
   "Invalid operation was Performed.": "不正な操作が行われました。",
   "Update Registered.":"編集完了しました。",
   "Deleted.": "削除しました。"

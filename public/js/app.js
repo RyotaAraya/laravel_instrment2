@@ -49335,7 +49335,43 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: "#app",
+  data: {
+    keyword: "",
+    tasks: []
+  },
+  computed: {
+    filteredTasks: function filteredTasks() {
+      var tasks = [];
+
+      for (var i in this.tasks) {
+        var task = this.tasks[i]; //キーワードを大文字に変換
+
+        var keyword = this.keyword.toUpperCase();
+        var plantUpperCase = task.plant_name.toUpperCase();
+        var tagUpperCase = task.tag_no.toUpperCase(); //一致しないと-1を返す
+
+        if (plantUpperCase.indexOf(keyword) !== -1 || tagUpperCase.indexOf(keyword) !== -1 || task.task_status.indexOf(this.keyword) !== -1) {
+          //一致したら表示する
+          tasks.push(task);
+        }
+      }
+
+      return tasks;
+    }
+  },
+  methods: {
+    fetchTasks: function fetchTasks() {
+      var _this = this;
+
+      axios.get("/api/get").then(function (res) {
+        _this.tasks = res.data;
+      });
+    }
+  },
+  created: function created() {
+    this.fetchTasks();
+  }
 });
 
 /***/ }),

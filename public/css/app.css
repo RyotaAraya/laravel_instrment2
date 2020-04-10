@@ -10887,3 +10887,76 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.p-task__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-task__container .p-task__list {
+  width: 50%;
+  margin-bottom: 12px;
+  display: flex;
+  background: #f1f1f1;
+  padding: 0.1em 0.5em;
+  border: solid 1px #b3b3b3;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #717171;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+
+@media screen and (max-width: 767px) {
+  .p-task__container .p-task__list {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.p-task__container .p-task__list .p-img__container {
+  width: 18rem;
+  height: 18rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .p-task__container .p-task__list .p-img__container {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.p-task__container .p-task__list .p-img__container .p-task__img {
+  margin-top: 1rem;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.p-task__container .p-task__list .p-task__container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+/*アニメーション*/
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 500ms;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-move {
+  transition: all 700ms;
+}
+
+.fade-leave-active {
+  /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
+  position: absolute;
+}
+

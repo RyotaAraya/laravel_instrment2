@@ -8,7 +8,7 @@
         <div class="card-header">{{ __('Tasks_Register') }}</div>
 
         <div class="card-body">
-          <form method="POST" action="{{ route('tasks.create') }}">
+          <form method="POST" action="{{ route('tasks.create') }}" enctype="multipart/form-data">
             @csrf
             <!-- plant_name -->
             <div class="form-group row">
@@ -85,7 +85,7 @@
               <label for="picture1" class="col-md-4 col-form-label text-md-right">{{ __('picture1') }}</label>
 
               <div class="col-md-6">
-                <input id="picture1" type="text" class="form-control @error('picture1') is-invalid @enderror" name="picture1" value="{{ old('picture1') }}" autocomplete="picture1" autofocus>
+                <input id="picture1" type="file" class="form-control @error('picture1') is-invalid @enderror" name="picture1" value="{{ old('picture1') }}" autocomplete="picture1" autofocus>
 
                 @error('picture1')
                 <span class="invalid-feedback" role="alert">
@@ -99,7 +99,7 @@
               <label for="picture2" class="col-md-4 col-form-label text-md-right">{{ __('picture2') }}</label>
 
               <div class="col-md-6">
-                <input id="picture2" type="text" class="form-control @error('picture2') is-invalid @enderror" name="picture2" value="{{ old('picture2') }}" autocomplete="picture2" autofocus>
+                <input id="picture2" type="file" class="form-control @error('picture2') is-invalid @enderror" name="picture2" value="{{ old('picture2') }}" autocomplete="picture2" autofocus>
 
                 @error('picture2')
                 <span class="invalid-feedback" role="alert">

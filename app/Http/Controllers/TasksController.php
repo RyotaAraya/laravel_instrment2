@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Task;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TasksController extends Controller
 {
@@ -16,6 +17,8 @@ class TasksController extends Controller
     public function index()
     {
         $tasks = Task::all();
+        //Log::debug(print_r($tasks, true));
+
         return view('tasks.index', ['tasks' => $tasks]);
     }
     public function new()
@@ -30,8 +33,8 @@ class TasksController extends Controller
             'trouble_content' => 'required|string|max:255',
             'details_repair' => 'required|string|max:255',
             'task_status' => 'required|string|max:20',
-            'picture1' => 'string|nullable|max:255',
-            'picture2' => 'string|nullable|max:255'
+            'picture1' => 'nullable',
+            'picture2' => 'nullable'
         ]);
 
         $task = new Task;
@@ -41,9 +44,26 @@ class TasksController extends Controller
         $task->trouble_content = $request->trouble_content;
         $task->details_repair = $request->details_repair;
         $task->task_status = $request->task_status;
-        $task->picture1 = $request->picture1;
-        $task->picture2 = $request->picture2;
         $task->delete_flg = 0;
+
+        if ($request->file('picture1') == "") {
+            $task->picture1 = "no_image.png";
+        } else {
+            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
+            $path1 = $request->file('picture1')->store('public/img');
+            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
+            $task->picture1 = basename($path1);
+
+        }      if ($request->file('picture2') == "") {
+            $task->picture2 = "no_image.png";
+        } else {
+            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
+            $path2 = $request->file('picture2')->store('public/img');
+            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
+            $task->picture2 = basename($path2);
+        }
+
+
         $task->save();
 
         return redirect('/tasks/new')->with('flash_message', __('Registered.'));

@@ -1,30 +1,89 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+// レイアウト幅
+$layout-width-inner: 1140px;
+
+// ブレークポイント
+$breakpoints: (
+    "sp": "screen and (max-width: 767px)",
+    "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+    "pc": "screen and (min-width: #{$layout-width-inner})"
+);
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+.p-task__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .p-task__list {
+        width: 50%;
+        margin-bottom: 12px;
+        display: flex;
+        background : #f1f1f1 ;
+        padding : 0.1em 0.5em ;
+        border : solid 1px #b3b3b3 ;
+        border-top : solid 1px #e0e0e0 ;
+        border-bottom : solid 1px #717171 ;
+        box-shadow : 0 2px 6px rgba(100, 100, 100, 0.3) ;        @include mq("sp") {
+            width: 100%;
+            margin-right: 0;
+        }
+        .p-img__container {
+            width: 18rem;
+            height: 18rem;
+            align-items: center;
+            @include mq("sp") {
+                width: 20rem;
+                height: 20rem;
+            }
+            .p-task__img {
+              margin-top: 1rem;
+
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .p-task__container {
+            display: flex;
+            flex-direction: column;
+            margin-left:12px;
+            .p-task__right {
+            }
+        }
+    }
+}
+
 /*アニメーション*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 500ms;
+    transition: all 500ms;
 }
 .fade-enter,
 .fade-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 .fade-move {
-  transition: all 700ms;
+    transition: all 700ms;
 }
 .fade-leave-active {
-  /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
-  position: absolute;
+    /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
+    position: absolute;
 }
