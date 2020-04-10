@@ -12,3 +12,19 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+/*アニメーション*/
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 500ms;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-move {
+  transition: all 700ms;
+}
+.fade-leave-active {
+  /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
+  position: absolute;
+}

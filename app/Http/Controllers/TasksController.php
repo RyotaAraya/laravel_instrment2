@@ -7,6 +7,12 @@ use App\Task;
 
 class TasksController extends Controller
 {
+    public function getTasks()
+    {
+        $tasks = Task::all();
+        return $tasks;
+    }
+
     public function index()
     {
         $tasks = Task::all();

@@ -29,5 +29,42 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: "#app",
+    data: {
+        keyword: "",
+        tasks: []
+    },
+    computed: {
+        filteredTasks: function() {
+            let tasks = [];
+            for (let i in this.tasks) {
+                let task = this.tasks[i];
+                //キーワードを大文字に変換
+                let keyword = this.keyword.toUpperCase();
+                let plantUpperCase = task.plant_name.toUpperCase();
+                let tagUpperCase = task.tag_no.toUpperCase();
+
+                //一致しないと-1を返す
+                if (
+                    plantUpperCase.indexOf(keyword) !== -1 ||
+                    tagUpperCase.indexOf(keyword) !== -1 ||
+                    task.task_status.indexOf(this.keyword) !== -1
+                ) {
+                    //一致したら表示する
+                    tasks.push(task);
+                }
+            }
+            return tasks;
+        }
+    },
+    methods: {
+        fetchTasks: function() {
+            axios.get("/api/get").then(res => {
+                this.tasks = res.data;
+            });
+        }
+    },
+    created() {
+        this.fetchTasks();
+    }
 });
