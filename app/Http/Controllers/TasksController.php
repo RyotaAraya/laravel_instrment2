@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class TasksController extends Controller
 {
@@ -21,6 +22,14 @@ class TasksController extends Controller
         //Log::debug(print_r($tasks, true));
 
         return view('tasks.index', ['tasks' => $tasks]);
+    }
+    public function mypage()
+    {
+        //ログインしているユーザーが作成したタスクを取得する
+        //tasksはユーザーモデルで定義したもの
+        $tasks = Auth::user()->tasks()->get();
+        dump('tasks:'.$tasks);
+        return view('tasks.mypage', compact('tasks'));
     }
 
     public function new()
@@ -66,7 +75,9 @@ class TasksController extends Controller
             $task->picture2 = basename($path2);
         }
 
-        $task->save();
+        //$task->save();
+        //user_idを紐付ける $taskのインスタンスを渡す
+        Auth::user()->tasks()->save($task);
 
         return redirect('/tasks/new')->with('flash_message', __('Registered.'));
     }
@@ -97,7 +108,10 @@ class TasksController extends Controller
         }
 
         //idを指定してTaskテーブルからデータ取得
-        $task = Task::find($id);
+        //$task = Task::find($id);
+
+        //ログインユーザーが作成したtaskを集めてIDで検索して取得
+        $task = Auth::user()->tasks()->find($id);
 
         //Taskテーブルにデータがなかった場合
         if (empty($task)) {

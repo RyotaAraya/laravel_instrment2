@@ -36,4 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Tasksモデルが紐づくことを定義する
+    public function tasks()
+    {
+        //hasManyメソッドを使う(userに対してTaskは多いから1対多)
+        return $this->hasMany('App\Task');
+    }
 }

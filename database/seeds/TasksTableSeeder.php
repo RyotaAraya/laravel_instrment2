@@ -20,11 +20,12 @@ class TasksTableSeeder extends Seeder
                 'trouble_content' => '指示不審',
                 'details_repair' => 'ノズル貫通',
                 'task_status' => '完了',
-                'picture1' => 'picture1-'.$i,
-                'picture2' => 'picture2-'.$i,
+                'picture1' => 'no_image.png',
+                'picture2' => 'no_image.png',
                 'delete_flg' => 0,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'user_id' => 1
             ]);
         }
     }

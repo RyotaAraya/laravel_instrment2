@@ -21,7 +21,7 @@ Route::get('/tasks/{id}/details', 'TasksController@details')->name('tasks.detail
 Route::get('/tasks/{id}/edit', 'TasksController@edit')->name('tasks.edit');
 Route::post('/tasks/{id}', 'TasksController@update')->name('tasks.update');
 Route::post('/tasks/{id}/delete', 'TasksController@destroy')->name('tasks.delete');
-Route::post('/tasks/mypage', 'TasksController@mypage')->name('tasks.mypage');
+Route::get('/mypage', 'TasksController@mypage')->name('tasks.mypage');
 
 Auth::routes();
 
