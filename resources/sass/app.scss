@@ -33,27 +33,30 @@ $breakpoints: (
     flex-wrap: wrap;
     .p-task__list {
         width: 50%;
-        margin-bottom: 12px;
         display: flex;
-        background : #f1f1f1 ;
-        padding : 0.1em 0.5em ;
-        border : solid 1px #b3b3b3 ;
-        border-top : solid 1px #e0e0e0 ;
-        border-bottom : solid 1px #717171 ;
-        box-shadow : 0 2px 6px rgba(100, 100, 100, 0.3) ;        @include mq("sp") {
+        padding: 1em 1em;
+        border: solid 1px #b3b3b3;
+        border-top: solid 1px #e0e0e0;
+        border-bottom: solid 1px #717171;
+        box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        @include mq("sp") {
             width: 100%;
-            margin-right: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .p-img__container {
             width: 18rem;
             height: 18rem;
-            align-items: center;
+            text-align: center;
+            display: table-cell;
+            line-height: 18rem;
             @include mq("sp") {
                 width: 20rem;
                 height: 20rem;
             }
             .p-task__img {
-              margin-top: 1rem;
+                vertical-align: middle;
 
                 width: auto;
                 height: auto;
@@ -64,11 +67,21 @@ $breakpoints: (
         .p-task__container {
             display: flex;
             flex-direction: column;
-            margin-left:12px;
+            margin-left: 12px;
             .p-task__right {
             }
         }
     }
+}
+// ボタン
+.btn {
+    border: 0 none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn-secondary{
+    background: #A4A9CF;
 }
 
 /*アニメーション*/

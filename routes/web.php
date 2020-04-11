@@ -17,9 +17,11 @@ Route::get('/', function () {
 Route::get('/tasks/new', 'TasksController@new')->name('tasks.new');
 Route::post('/tasks', 'TasksController@create')->name('tasks.create');
 Route::get('/tasks', 'TasksController@index')->name('tasks.index');
+Route::get('/tasks/{id}/details', 'TasksController@details')->name('tasks.details');
 Route::get('/tasks/{id}/edit', 'TasksController@edit')->name('tasks.edit');
 Route::post('/tasks/{id}', 'TasksController@update')->name('tasks.update');
 Route::post('/tasks/{id}/delete', 'TasksController@destroy')->name('tasks.delete');
+Route::post('/tasks/mypage', 'TasksController@mypage')->name('tasks.mypage');
 
 Auth::routes();
 

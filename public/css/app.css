@@ -10895,10 +10895,8 @@ a.text-dark:focus {
 
 .p-task__container .p-task__list {
   width: 50%;
-  margin-bottom: 12px;
   display: flex;
-  background: #f1f1f1;
-  padding: 0.1em 0.5em;
+  padding: 1em 1em;
   border: solid 1px #b3b3b3;
   border-top: solid 1px #e0e0e0;
   border-bottom: solid 1px #717171;
@@ -10908,14 +10906,18 @@ a.text-dark:focus {
 @media screen and (max-width: 767px) {
   .p-task__container .p-task__list {
     width: 100%;
-    margin-right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .p-task__container .p-task__list .p-img__container {
   width: 18rem;
   height: 18rem;
-  align-items: center;
+  text-align: center;
+  display: table-cell;
+  line-height: 18rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -10926,7 +10928,7 @@ a.text-dark:focus {
 }
 
 .p-task__container .p-task__list .p-img__container .p-task__img {
-  margin-top: 1rem;
+  vertical-align: middle;
   width: auto;
   height: auto;
   max-width: 100%;
@@ -10937,6 +10939,17 @@ a.text-dark:focus {
   display: flex;
   flex-direction: column;
   margin-left: 12px;
+}
+
+.btn {
+  border: 0 none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-secondary {
+  background: #A4A9CF;
 }
 
 /*アニメーション*/

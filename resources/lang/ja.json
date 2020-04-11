@@ -1,6 +1,6 @@
 {
-  "Tasks_Register": "タスク新規登録",
-  "Task_List": "タスク一覧",
+  "Task List": "工事一覧",
+  "Tasks Update": "工事編集",
 
   "plant_name": "プラント名",
   "tag_no": "タグナンバー",
@@ -10,8 +10,23 @@
   "picture1": "画像1",
   "picture2": "画像2",
 
+  "Task Add": "工事登録",
+  "Task Update": "更新",
+  "Tasks List": "工事一覧",
+  "Task Register": "工事新規登録",
+
   "Login": "ログイン",
-  "Register": "登録",
+  "Logout": "ログアウト",
+  "Register": "ユーザー登録",
+  "Reset Password": "パスワード再設定",
+  "Forgot Your Password?": "パスワードを忘れた方はコチラ",
+  "Send Password Reset Link": "パスワードリセット用リンクを送付",
+
+  "Name": "氏名",
+  "E-Mail Address": "E-mail",
+  "Password": "パスワード",
+  "Confirm Password": "パスワード再入力",
+  "Remember Me": "自動ログイン",
 
   "No data.": "データベースにデータがありません。",
   "Registered.": "新規登録しました。",
