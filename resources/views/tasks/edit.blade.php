@@ -7,7 +7,7 @@
       <div class="card-header">{{ __('Tasks Update') }}</div>
 
       <div class="card-body">
-        <form method="POST" action="{{ route('tasks.update', $task->id) }}">
+        <form method="POST" action="{{ route('tasks.update', $task->id) }}" enctype="multipart/form-data">
           @csrf
           <!-- plant_name -->
           <div class="form-group row">
@@ -100,8 +100,9 @@
             <label for="picture2" class="col-md-3 col-form-label text-md-right">{{ __('picture2') }}</label>
 
             <div class="col-md-8">
-              <img class="img" src="/storage/img/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" /></p>
-              <input id="picture2" type="file" class="@error('picture2') is-invalid @enderror" name="picture2" value="{{ $task->picture2 }}" autocomplete="picture2">
+              <label>
+                <img class="img" src="/storage/img/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" /></p>
+                <input id="picture2" type="file" class="@error('picture2') is-invalid @enderror" name="picture2" value="{{ $task->picture2 }}" autocomplete="picture2"></label>
 
               @error('picture2')
               <span class="invalid-feedback" role="alert">

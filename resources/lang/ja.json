@@ -9,6 +9,8 @@
   "task_status": "状態",
   "picture1": "画像1",
   "picture2": "画像2",
+  "task_createdate": "通知日",
+  "task_updatedate": "更新日時",
 
   "Task Add": "工事登録",
   "Task Update": "更新",
