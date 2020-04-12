@@ -30,7 +30,7 @@
                 </transition-group>
             </div>
             <div v-else class="p-task__list__non">
-                <p>工事がありません。</p>
+                <p> 工事がありません。</p>
             </div>
         </div>
     </div>

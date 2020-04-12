@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,7 @@ class TasksController extends Controller
         //ログインしているユーザーが作成したタスクを取得する
         //tasksはユーザーモデルで定義したもの
         $tasks = Auth::user()->tasks()->get();
-        dump('tasks:'.$tasks);
+        dump('tasks:' . $tasks);
         return view('tasks.mypage', compact('tasks'));
     }
 
@@ -115,7 +116,7 @@ class TasksController extends Controller
 
         //Taskテーブルにデータがなかった場合
         if (empty($task)) {
-            return redirect('/tasks/new')->with('flash_message', __('No data.'));
+            return redirect('/tasks/new')->with('flash_message', __('Invalid operation was Performed.'));
         }
         //viewにtaskに$taskを詰めて渡す、view側では$taskとして使用可能
         return view('tasks.edit', ['task' => $task]);
