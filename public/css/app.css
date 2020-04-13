@@ -10893,7 +10893,10 @@ a.text-dark:focus {
 }
 
 .p-search__container .p-form__search {
-  margin: 0 1rem;
+  display: block;
+  width: 40rem;
+  max-width: 100%;
+  margin: 0 auto;
   font-size: 120%;
   background: #f1f1f1;
   padding: 0.1em 0.5em;
@@ -10903,16 +10906,16 @@ a.text-dark:focus {
   box-shadow: 0 1px 2px rgba(100, 100, 100, 0.3) inset;
 }
 
-.p-task__container {
+.p-tasks__container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.p-task__container .p-task__list {
+.p-tasks__container .p-task__list {
   width: 50%;
   display: flex;
-  padding: 1em 1em;
+  padding: 1rem;
   border: solid 1px #b3b3b3;
   border-top: solid 1px #e0e0e0;
   border-bottom: solid 1px #717171;
@@ -10920,7 +10923,7 @@ a.text-dark:focus {
 }
 
 @media screen and (max-width: 767px) {
-  .p-task__container .p-task__list {
+  .p-tasks__container .p-task__list {
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -10928,54 +10931,63 @@ a.text-dark:focus {
   }
 }
 
-.p-task__container .p-task__list .p-img__container {
+.p-tasks__container .p-task__list .p-img__container {
   width: 18rem;
   height: 18rem;
-  text-align: center;
-  display: table-cell;
   line-height: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 767px) {
-  .p-task__container .p-task__list .p-img__container {
+  .p-tasks__container .p-task__list .p-img__container {
     width: 20rem;
     height: 20rem;
   }
 }
 
-.p-task__container .p-task__list .p-img__container .p-task__img {
-  vertical-align: middle;
+.p-tasks__container .p-task__list .p-img__container .p-task__img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100%;
 }
 
-.p-task__container .p-task__list .p-task__container {
+.p-tasks__container .p-task__list .p-task__container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-left: 12px;
-  padding: 2rem;
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 767px) {
-  .p-task__container .p-task__list .p-task__container {
+  .p-tasks__container .p-task__list .p-task__container {
     margin: 0;
     padding: 1rem 0;
   }
 }
 
-.p-task__container .p-task__list .p-task__container .p-task__flex {
+.p-tasks__container .p-task__list .p-task__container .p-task__flex {
   margin: 0;
 }
 
-.p-task__container .p-task__list .p-task__container .p-task__flex.btn {
+.p-tasks__container .p-task__list .p-task__container .p-task__flex.btn {
   margin-top: 0.4rem;
 }
 
-.p-task__list__non {
-  width: 100%;
+.p-task__display {
+  font-size: 110%;
+  background: #f1f1f1;
+  padding: 0.1em 0.5em;
+  border-bottom: solid 1px #e0e0e0;
+}
+
+.p-tasks__non {
+  width: 200px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .btn {
@@ -10985,8 +10997,16 @@ a.text-dark:focus {
   text-transform: uppercase;
 }
 
+.btn-danger {
+  background: #EAA8BF;
+}
+
+.btn-success {
+  background: #A6E39D;
+}
+
 .btn-secondary {
-  background: #a4a9cf;
+  background: #AEC1E3;
 }
 
 /*アニメーション*/
@@ -11008,5 +11028,58 @@ a.text-dark:focus {
 .fade-leave-active {
   /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
   position: absolute;
+}
+
+.p-counter__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p-counter__box .p-counter__right {
+  margin: 0;
+}
+
+.p-counter__box .p-counter__right .p-counter__total {
+  font-weight: bold;
+}
+
+.p-session__flash_message {
+  position: absolute;
+}
+
+.paginationWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+  margin-bottom: 40px;
+}
+
+.paginationWrap ul.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.paginationWrap ul.pagination li {
+  display: inline;
+  margin-right: 4px;
+}
+
+.paginationWrap ul.pagination li a {
+  color: #2f3859;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+.paginationWrap ul.pagination li a.active {
+  background-color: #a4a9cf;
+  color: white;
+  width: 38px;
+  height: 38px;
+}
+
+.paginationWrap ul.pagination li a:hover:not(.active) {
+  background-color: #e1e7f0;
+  border-radius: 40px;
 }
 

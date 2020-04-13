@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/tasks', 'TasksController@index')->name('tasks.index');
 Route::get('/tasks/{id}/details', 'TasksController@details')->name('tasks.details');
+Route::get('/alltasks', 'TasksController@alltasks')->name('tasks.alltasks');
+
 
 //ログインしないとアクセスできないようにする(認証middleware auth)
 Route::group(['middleware' => 'auth'], function () {
@@ -25,6 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/tasks/{id}/edit', 'TasksController@edit')->name('tasks.edit');
     Route::post('/tasks/{id}', 'TasksController@update')->name('tasks.update');
     Route::post('/tasks/{id}/delete', 'TasksController@destroy')->name('tasks.delete');
+    Route::post('/tasks/{id}/resurrection', 'TasksController@resurrection')->name('tasks.resurrection');
     Route::get('/mypage', 'TasksController@mypage')->name('tasks.mypage');
 });
 Auth::routes();

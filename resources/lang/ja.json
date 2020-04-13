@@ -1,6 +1,12 @@
 {
   "Task List": "工事一覧",
   "Tasks Update": "工事編集",
+  "Task Details": "工事詳細",
+  "All Tasks": "全工事表示",
+  "Go Details": "詳細ページへ",
+  "Go Update": "編集ページへ",
+  "Go Delete": "削除",
+  "Go Resurrection": "削除取消",
 
   "plant_name": "プラント名",
   "tag_no": "タグナンバー",
@@ -9,7 +15,8 @@
   "task_status": "状態",
   "picture1": "画像1",
   "picture2": "画像2",
-  "task_createdate": "通知日",
+  "creater_name": "通知者",
+  "task_createdate": "通知日時",
   "task_updatedate": "更新日時",
 
   "Task Add": "工事登録",
@@ -34,5 +41,6 @@
   "Registered.": "新規登録しました。",
   "Invalid operation was Performed.": "不正な操作が行われました。",
   "Update Registered.":"編集完了しました。",
-  "Deleted.": "削除しました。"
+  "Deleted.": "削除しました。",
+  "Resurrection.": "削除を取り消しました。"
 }

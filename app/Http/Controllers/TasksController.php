@@ -16,20 +16,24 @@ class TasksController extends Controller
 
         return $tasks;
     }
+    public function alltasks()
+    {
+        $tasks = Task::all();
+
+        return view('tasks.alltasks', ['tasks' => $tasks]);
+    }
 
     public function index()
     {
-        $tasks = Task::all();
+        $tasks = Task::where('delete_flg','=',0)->paginate(10);
         //Log::debug(print_r($tasks, true));
-
         return view('tasks.index', ['tasks' => $tasks]);
     }
     public function mypage()
     {
         //ログインしているユーザーが作成したタスクを取得する
         //tasksはユーザーモデルで定義したもの
-        $tasks = Auth::user()->tasks()->get();
-        dump('tasks:' . $tasks);
+        $tasks = Auth::user()->tasks()->paginate(10);
         return view('tasks.mypage', compact('tasks'));
     }
 
@@ -109,10 +113,10 @@ class TasksController extends Controller
         }
 
         //idを指定してTaskテーブルからデータ取得
-        //$task = Task::find($id);
+        $task = Task::find($id);
 
         //ログインユーザーが作成したtaskを集めてIDで検索して取得
-        $task = Auth::user()->tasks()->find($id);
+        //$task = Auth::user()->tasks()->find($id);
 
         //Taskテーブルにデータがなかった場合
         if (empty($task)) {
@@ -178,10 +182,26 @@ class TasksController extends Controller
             return redirect('/tasks/new')->with('flash_message', __('Invalid operation was Performed.'));
         }
 
+        //Auth::user()->tasks();
         $task = Task::find($id);
         $task->delete_flg = 1;
         $task->save();
 
-        return redirect('/tasks')->with('flash_message', __('Deleted.'));
+        return redirect('/mypage')->with('flash_message', __('Deleted.'));
+    }
+    //削除したデータを復活させる
+    public function resurrection($id)
+    {
+        //idが数字でなければエラー、事前にチェックしてDBへの無駄なアクセスを減らせる
+        if (!ctype_digit($id)) {
+            return redirect('/tasks/new')->with('flash_message', __('Invalid operation was Performed.'));
+        }
+
+        //Auth::user()->tasks();
+        $task = Task::find($id);
+        $task->delete_flg = 0;
+        $task->save();
+
+        return redirect('/mypage')->with('flash_message', __('Resurrection.'));
     }
 }

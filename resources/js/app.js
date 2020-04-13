@@ -9,6 +9,17 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+(function() {
+    'use strict';
+
+    // フラッシュメッセージのfadeout
+    $(function(){
+        $('.p-session__flash_message').fadeOut(5000);
+    });
+
+})();
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
