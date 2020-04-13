@@ -116,6 +116,13 @@ $breakpoints: (
     margin: 0 auto;
     padding: 2rem 0;
 }
+//タイトル用
+.p-title__container{
+    .p-title__tag{
+        text-align: center;
+        margin: 0.4rem;
+    }
+}
 // ボタン
 .btn {
     border: 0 none;

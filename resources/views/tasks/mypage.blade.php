@@ -7,10 +7,13 @@
             <div class="p-counter__box p-form__width card-header">{{ __('My Page') }}
                 <!-- 検索数を表示 -->
                 <p class="p-counter__right">
-                    <a class="p-counter__total">{{ $tasks->total() }} 件Hit /</a>
-                    ({{ $tasks->firstItem() }} 〜
-                    {{ $tasks->lastItem() }} )
+                    {{ $tasks->firstItem() }} 〜
+                    {{ $tasks->lastItem() }} ／
+                    <a class="p-counter__total">{{ $tasks->total() }} 件</a>
                 </p>
+            </div>
+            <div class="p-title__container">
+                <p class="p-title__tag">{{ Auth::user()->name }}さんの仕事一覧</p>
             </div>
             @if(count($tasks))
             <div name="fade" class="p-tasks__container">

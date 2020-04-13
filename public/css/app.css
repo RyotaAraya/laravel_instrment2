@@ -10990,6 +10990,11 @@ a.text-dark:focus {
   padding: 2rem 0;
 }
 
+.p-title__container .p-title__tag {
+  text-align: center;
+  margin: 0.4rem;
+}
+
 .btn {
   border: 0 none;
   font-weight: 500;

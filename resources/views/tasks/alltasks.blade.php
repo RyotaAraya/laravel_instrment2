@@ -9,7 +9,7 @@
                 <!-- 検索数を表示 -->
                 <p class="p-counter__right">
                     <a class="p-counter__total">
-                        @{{ filteredTasks.length}} 件 Hit
+                        @{{ filteredTasks.length}} 件
                     </a>
                 </p>
             </div>
@@ -31,8 +31,10 @@
                             <p class="p-task__flex">{{ __('tag_no') }}：@{{task.tag_no}}</p>
                             <p class="p-task__flex">{{ __('task_status') }}：@{{task.task_status}}</p>
                             <p class="p-task__flex">@{{task.created_at}}</p>
-                            <a v-bind:href="`tasks/${task.id}/details`" class="btn btn-secondary p-task__flex">詳細ページへ</a>
-                            <a v-bind:href="`tasks/${task.id}/edit`" class="btn btn-secondary p-task__flex">編集ページへ</a>
+                            <a v-bind:href="`tasks/${task.id}/details`" class="btn btn-secondary p-task__flex">{{ __('Go Details')}}</a>
+                            @if(Auth::check())
+                            <a v-bind:href="`tasks/${task.id}/edit`" class="btn btn-secondary p-task__flex">{{ __('Go Update')}}</a>
+                            @endif
                         </div>
 
                     </li>
