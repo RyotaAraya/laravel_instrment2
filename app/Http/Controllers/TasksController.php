@@ -12,7 +12,7 @@ class TasksController extends Controller
 {
     public function getTasks()
     {
-        $tasks = Task::all();
+        $tasks = Task::where('delete_flg', '=', 0)->get();
 
         return $tasks;
     }
@@ -25,7 +25,7 @@ class TasksController extends Controller
 
     public function index()
     {
-        $tasks = Task::where('delete_flg','=',0)->paginate(10);
+        $tasks = Task::where('delete_flg', '=', 0)->paginate(10);
         //Log::debug(print_r($tasks, true));
         return view('tasks.index', ['tasks' => $tasks]);
     }
@@ -149,27 +149,43 @@ class TasksController extends Controller
 
         if ($request->file('picture1') == '' && $task->picture1 == 'no_image.png') {
             $task->picture1 = 'no_image.png';
-        } elseif ($request->file('picture1') !== '') {
+        } elseif ($request->file('picture1') != '' && $task->picture1 == 'no_image.png') {
+            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
+            $path1 = $request->file('picture1')->store('public/img');
+            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
+            $task->picture1 = basename($path1);
+        } elseif ($request->file('picture1') != '' && $task->picture1 != 'no_image.png') {
             //画像をpublic下に保存しpathを作成 public/img/xxxx.png
             $path1 = $request->file('picture1')->store('public/img');
             //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
             $task->picture1 = basename($path1);
         }
-        if ($request->file('picture2') == '' && $task->picture2 == 'no_image.png') {
-            $task->picture2 = 'no_image.png';
-        } elseif ($request->file('picture2') !== '' && $request->file('picture1') == '' && $task->picture1 === 'no_image.png') {
-            //画像1が空で画像2のリクエストがあったら画像1に入れる
-            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            $path1 = $request->file('picture2')->store('public/img');
-            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-            $task->picture1 = basename($path1);
-        } elseif ($request->file('picture2') !== '') {
-            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            $path2 = $request->file('picture2')->store('public/img');
 
-            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-            $task->picture2 = basename($path2);
+
+        if ($request->file('picture2') != '') {
+            if ($request->file('picture1') == '' && $task->picture1 == 'no_image.png') {
+                //画像1が空で画像2のリクエストがあったら画像1に入れる
+                //画像をpublic下に保存しpathを作成 public/img/xxxx.png
+                $path1 = $request->file('picture2')->store('public/img');
+                //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
+                $task->picture1 = basename($path1);
+            } elseif ($task->picture2 == 'no_image.png') {
+                //画像をpublic下に保存しpathを作成 public/img/xxxx.png
+                $path2 = $request->file('picture2')->store('public/img');
+                //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
+                $task->picture2 = basename($path2);
+            } elseif ($task->picture2 != 'no_image.png') {
+                //画像をpublic下に保存しpathを作成 public/img/xxxx.png
+                $path2 = $request->file('picture2')->store('public/img');
+                //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
+                $task->picture2 = basename($path2);
+            }
+        } else {
+            $task->picture2 = 'no_image.png';
         }
+
+
+
 
         $task->save();
         return redirect('/tasks')->with('flash_message', __('Update Registered.'));

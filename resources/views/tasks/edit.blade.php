@@ -111,6 +111,7 @@
               @enderror
             </div>
           </div>
+          <div for="picture2" class="col-md-3 col-form-label text-md-right"></div>
           <div class="form-group row mt-5 mb-4">
             <div class="col-md-8 offset-md-3">
               <button type="submit" class="btn btn-secondary btn-lg btn-block" onclick='return confirm("タスクを上書き保存しますか？");'>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="card">
             <div class="p-counter__box p-form__width card-header">{{ __('Task List') }}
-            <a href="{{ route('tasks.alltasks') }}">{{ __('All Tasks') }}</a>
+                <a href="{{ route('tasks.alltasks') }}">{{ __('All Tasks') }}</a>
                 <!-- 検索数を表示 -->
                 <p class="p-counter__right">
                     <a class="p-counter__total">{{ $tasks->total() }} 件Hit /</a>
@@ -24,7 +24,8 @@
                         <p class="p-task__flex">{{ __('plant_name') }}：{{$task->plant_name}}</p>
                         <p class="p-task__flex">{{ __('tag_no') }}：{{$task->tag_no}}</p>
                         <p class="p-task__flex">{{ __('task_status') }}：{{$task->task_status}}</p>
-                        <p class="p-task__flex">{{ __('task_createdate') }}：{{$task->created_at}}</p>
+                        <p class="p-task__flex">{{ __('creater_name') }}：{{$task->user->name}}</p>
+                        <p class="p-task__flex">{{$task->created_at}}</p>
                         <a href="tasks/{{ $task->id }}/details" class="btn btn-secondary p-task__flex">詳細ページへ</a>
                         @if(Auth::check())
                         <a href="tasks/{{ $task->id }}/edit" class="btn btn-secondary p-task__flex">編集ページへ</a>

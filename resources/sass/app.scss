@@ -164,6 +164,10 @@ $breakpoints: (
 //Flash Message
 .p-session__flash_message{
     position: absolute;
+    width: 100%;
+    z-index: 10;
+    background: #3261AB;
+    color:#fff;
 }
 
 //Pagenate

@@ -49322,7 +49322,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
   'use strict'; // フラッシュメッセージのfadeout
 
   $(function () {
-    $('.p-session__flash_message').fadeOut(5000);
+    $('.p-session__flash_message').fadeOut(6000);
   });
 })();
 /**

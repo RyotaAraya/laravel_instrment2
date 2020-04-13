@@ -14,11 +14,10 @@ window.Vue = require('vue');
 
     // フラッシュメッセージのfadeout
     $(function(){
-        $('.p-session__flash_message').fadeOut(5000);
+        $('.p-session__flash_message').fadeOut(6000);
     });
 
 })();
-
 
 /**
  * The following block of code may be used to automatically register your

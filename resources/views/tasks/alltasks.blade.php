@@ -30,7 +30,7 @@
                             <p class="p-task__flex">{{ __('plant_name') }}：@{{task.plant_name}}</p>
                             <p class="p-task__flex">{{ __('tag_no') }}：@{{task.tag_no}}</p>
                             <p class="p-task__flex">{{ __('task_status') }}：@{{task.task_status}}</p>
-                            <p class="p-task__flex">{{ __('task_createdate') }}：@{{task.created_at}}</p>
+                            <p class="p-task__flex">@{{task.created_at}}</p>
                             <a v-bind:href="`tasks/${task.id}/details`" class="btn btn-secondary p-task__flex">詳細ページへ</a>
                             <a v-bind:href="`tasks/${task.id}/edit`" class="btn btn-secondary p-task__flex">編集ページへ</a>
                         </div>
