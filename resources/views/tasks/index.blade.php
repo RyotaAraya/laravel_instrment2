@@ -15,7 +15,7 @@
             <!-- 全件表示リンク vue.js -->
             <div class="p-title__container">
                 <p class="p-title__tag"><a href="{{ route('tasks.alltasks') }}">{{ __('All Tasks') }}</a>
-</p>
+                </p>
             </div>
             @if(count($tasks))
             <div name="fade" class="p-tasks__container">

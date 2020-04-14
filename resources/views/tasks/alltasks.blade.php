@@ -36,9 +36,9 @@
                             <a v-bind:href="`tasks/${task.id}/edit`" class="btn btn-secondary p-task__flex">{{ __('Go Update')}}</a>
                             @endif
                         </div>
-
                     </li>
                 </transition-group>
+                <!-- TODO:test1 -->
             </div>
             <div v-else class="p-tasks__non">
                 <p>工事データがありません</p>
