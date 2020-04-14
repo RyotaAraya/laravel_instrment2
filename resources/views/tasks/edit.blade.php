@@ -8,6 +8,7 @@
 
       <div class="card-body">
         <form method="POST" action="{{ route('tasks.update', $task->id) }}" enctype="multipart/form-data">
+        @method('PUT')
           @csrf
           <!-- plant_name -->
           <div class="form-group row">
@@ -111,7 +112,6 @@
               @enderror
             </div>
           </div>
-          <div for="picture2" class="col-md-3 col-form-label text-md-right"></div>
           <div class="form-group row mt-5 mb-4">
             <div class="col-md-8 offset-md-3">
               <button type="submit" class="btn btn-secondary btn-lg btn-block" onclick='return confirm("タスクを上書き保存しますか？");'>
@@ -120,6 +120,11 @@
             </div>
           </div>
         </form>
+        <div class="form-group row">
+          <div class="col-md-6">
+            <a href="{{ route('tasks.index')}}">&lt; 工事一覧へ</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

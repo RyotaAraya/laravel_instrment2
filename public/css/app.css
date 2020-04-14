@@ -10932,6 +10932,7 @@ a.text-dark:focus {
 }
 
 .p-tasks__container .p-task__list .p-img__container {
+  display: block;
   width: 18rem;
   height: 18rem;
   line-height: 18rem;
@@ -11003,15 +11004,15 @@ a.text-dark:focus {
 }
 
 .btn-danger {
-  background: #EAA8BF;
+  background: #eaa8bf;
 }
 
 .btn-success {
-  background: #A6E39D;
+  background: #a6e39d;
 }
 
 .btn-secondary {
-  background: #AEC1E3;
+  background: #aec1e3;
 }
 
 /*アニメーション*/
@@ -11052,7 +11053,7 @@ a.text-dark:focus {
   position: absolute;
   width: 100%;
   z-index: 10;
-  background: #3261AB;
+  background: #3261ab;
   color: #fff;
 }
 

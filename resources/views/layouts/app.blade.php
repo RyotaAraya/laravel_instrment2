@@ -19,6 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -39,7 +44,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                    @if(Auth::check())
+                        @if(Auth::check())
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('tasks.index') }}">{{ __('Tasks List') }}</a>
                         </li>
@@ -47,7 +52,7 @@
                             <a class="nav-link" href="{{ route('tasks.new') }}">{{ __('Task Add') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tasks.mypage') }}">{{ __('Mypage') }}</a>
+                            <a class="nav-link" href="{{ route('tasks.mypage') }}">{{ __('My Page') }}</a>
                         </li>
                         @endif
                         <!-- Authentication Links -->

@@ -22,9 +22,8 @@
 
                 @foreach($tasks as $task)
                 <div class="p-task__list">
-                    <div class="p-img__container">
-                        <img class="p-task__img" src="storage/img/{{ $task->picture1 }}" />
-                    </div>
+                    <a class="p-img__container" href="storage/img/{{ $task->picture1 }}" data-lightbox="group">
+                        <img class="p-task__img" src="storage/img/{{ $task->picture1 }}" /></a>
                     <div class="p-task__container">
                         <p class="p-task__flex">{{ __('plant_name') }}：{{$task->plant_name}}</p>
                         <p class="p-task__flex">{{ __('tag_no') }}：{{$task->tag_no}}</p>

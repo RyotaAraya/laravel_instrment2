@@ -61,8 +61,9 @@
           <div for="picture1" class="col-md-3 text-md-right">{{ __('picture1') }}</div>
 
           <div class="col-md-8">
-            <img class="img" src="/storage/img/{{ $task->picture1 }}" style="max-width: 100%; height:auto;" />
-            {{ $task->picture1 }}</p>
+            <a class="" href="/storage/img/{{ $task->picture1 }}" data-lightbox="group">
+              <img class="img" src="/storage/img/{{ $task->picture1 }}" style="max-width: 100%; height:auto;" />
+            </a></p>
           </div>
         </div>
         <!-- 画像2 -->
@@ -70,13 +71,14 @@
           <div for="picture2" class="col-md-3 text-md-right">{{ __('picture2') }}</div>
 
           <div class="col-md-8">
-            <img class="img" src="/storage/img/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" />
-            {{ $task->picture2 }}</p>
+            <a class="" href="/storage/img/{{ $task->picture2 }}" data-lightbox="group">
+              <img class="img" src="/storage/img/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" />
+            </a></p>
           </div>
         </div>
         <div class="form-group row">
           <div class="col-md-6">
-            <a href="{{ route('tasks.index')}}">&lt; 一覧に戻る</a>
+            <a href="{{ route('tasks.index')}}">&lt; 工事一覧へ</a>
           </div>
         </div>
       </div>

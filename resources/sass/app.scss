@@ -64,6 +64,7 @@ $breakpoints: (
             align-items: center;
         }
         .p-img__container {
+            display:block;
             width: 18rem;
             height: 18rem;
             line-height: 18rem;
@@ -74,12 +75,12 @@ $breakpoints: (
                 width: 20rem;
                 height: 20rem;
             }
-            .p-task__img {
-                width: auto;
-                height: auto;
-                max-width: 100%;
-                max-height: 100%;
-            }
+                .p-task__img {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
         }
         .p-task__container {
             display: flex;
@@ -117,8 +118,8 @@ $breakpoints: (
     padding: 2rem 0;
 }
 //タイトル用
-.p-title__container{
-    .p-title__tag{
+.p-title__container {
+    .p-title__tag {
         text-align: center;
         margin: 0.4rem;
     }
@@ -130,14 +131,14 @@ $breakpoints: (
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.btn-danger{
-    background: #EAA8BF;
+.btn-danger {
+    background: #eaa8bf;
 }
-.btn-success{
-    background: #A6E39D;
+.btn-success {
+    background: #a6e39d;
 }
 .btn-secondary {
-    background: #AEC1E3;
+    background: #aec1e3;
 }
 
 /*アニメーション*/
@@ -163,18 +164,18 @@ $breakpoints: (
     justify-content: space-between;
     .p-counter__right {
         margin: 0;
-        .p-counter__total{
+        .p-counter__total {
             font-weight: bold;
         }
     }
 }
 //Flash Message
-.p-session__flash_message{
+.p-session__flash_message {
     position: absolute;
     width: 100%;
     z-index: 10;
-    background: #3261AB;
-    color:#fff;
+    background: #3261ab;
+    color: #fff;
 }
 
 //Pagenate
