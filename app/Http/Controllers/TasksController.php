@@ -50,8 +50,8 @@ class TasksController extends Controller
             'trouble_content' => 'required|string|max:255',
             'details_repair' => 'required|string|max:255',
             'task_status' => 'required|string|max:20',
-            'picture1' => 'nullable',
-            'picture2' => 'nullable',
+            'picture1' => 'nullable|file|image|mimes:jpeg,png|max:1024',
+            'picture2' => 'nullable|file|image|mimes:jpeg,png|max:1024',
         ]);
 
         $task = new Task();
@@ -62,6 +62,8 @@ class TasksController extends Controller
         $task->details_repair = $request->details_repair;
         $task->task_status = $request->task_status;
         $task->delete_flg = 0;
+
+
 
         if ($request->file('picture1') == '') {
             $task->picture1 = 'no_image.png';
@@ -132,6 +134,15 @@ class TasksController extends Controller
         if (!ctype_digit($id)) {
             return redirect('/tasks/new')->with('flash_message', __('Invalid operation was Performed.'));
         }
+        $request->validate([
+            'plant_name' => 'required|string|max:20',
+            'tag_no' => 'required|string|max:20',
+            'trouble_content' => 'required|string|max:255',
+            'details_repair' => 'required|string|max:255',
+            'task_status' => 'required|string|max:20',
+            'picture1' => 'nullable|file|image|mimes:jpeg,png|max:1024',
+            'picture2' => 'nullable|file|image|mimes:jpeg,png|max:1024',
+        ]);
 
         $task = Task::find($id);
 
