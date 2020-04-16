@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card">
-            <div class="p-counter__box p-form__width card-header">{{ __('Task List') }}
+            <div class="p-counter__box p-form__width card-header"><i class="far fa-list-alt">{{ __('Task List') }}</i>
                 <!-- 検索数を表示 -->
                 <p class="p-counter__right">
                     {{ $tasks->firstItem() }} 〜
@@ -30,9 +30,9 @@
                         <p class="p-task__flex">{{ __('task_status') }}：{{$task->task_status}}</p>
                         <p class="p-task__flex">{{ __('creater_name') }}：{{$task->user->name}}</p>
                         <p class="p-task__flex">{{$task->created_at}}</p>
-                        <a href="tasks/{{ $task->id }}/details" class="btn btn-secondary p-task__flex">{{ __('Go Details')}}</a>
+                        <a href="tasks/{{ $task->id }}/details" class="btn btn-secondary p-task__flex"><i class="fas fa-search"></i>{{ __('Go Details')}}</a>
                         @if(Auth::check())
-                        <a href="tasks/{{ $task->id }}/edit" class="btn btn-secondary p-task__flex">{{ __('Go Update')}}</a>
+                        <a href="tasks/{{ $task->id }}/edit" class="btn btn-secondary p-task__flex"><i class="fas fa-pen"></i>{{ __('Go Update')}}</a>
                         @endif
                     </div>
                 </div>

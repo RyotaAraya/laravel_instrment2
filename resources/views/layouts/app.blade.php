@@ -16,6 +16,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -46,13 +48,13 @@
                     <ul class="navbar-nav ml-auto">
                         @if(Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tasks.index') }}">{{ __('Tasks List') }}</a>
+                            <a class="nav-link" href="{{ route('tasks.index') }}"><i class="far fa-list-alt"></i>{{ __('Tasks List') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tasks.new') }}">{{ __('Task Add') }}</a>
+                            <a class="nav-link" href="{{ route('tasks.new') }}"><i class="fas fa-hammer"></i>{{ __('Task Add') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tasks.mypage') }}">{{ __('My Page') }}</a>
+                            <a class="nav-link" href="{{ route('tasks.mypage') }}"><i class="far fa-address-card"></i>{{ __('My Page') }}</a>
                         </li>
                         @endif
                         <!-- Authentication Links -->

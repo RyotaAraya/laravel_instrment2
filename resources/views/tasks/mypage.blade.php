@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card">
-            <div class="p-counter__box p-form__width card-header">{{ __('My Page') }}
+            <div class="p-counter__box p-form__width card-header"><i class="far fa-address-card">{{ __('My Page') }}</i>
                 <!-- 検索数を表示 -->
                 <p class="p-counter__right">
                     {{ $tasks->firstItem() }} 〜
@@ -26,13 +26,13 @@
                         <p class="p-task__flex">{{ __('tag_no') }}：{{$task->tag_no}}</p>
                         <p class="p-task__flex">{{ __('task_status') }}：{{$task->task_status}}</p>
                         <p class="p-task__flex">{{$task->created_at}}</p>
-                        <a href="tasks/{{ $task->id }}/details" class="btn btn-secondary p-task__flex">{{ __('Go Details')}}</a>
-                        <a href="tasks/{{ $task->id }}/edit" class="btn btn-secondary p-task__flex">{{ __('Go Update')}}</a>
+                        <a href="tasks/{{ $task->id }}/details" class="btn btn-secondary p-task__flex"><i class="fas fa-search"></i>{{ __('Go Details')}}</a>
+                        <a href="tasks/{{ $task->id }}/edit" class="btn btn-secondary p-task__flex"><i class="fas fa-pen"></i>{{ __('Go Update')}}</a>
                         @if($task->delete_flg === 0)
                         <form action="{{ route('tasks.delete', $task->id) }}" method="POST" class="">
                             @method('DELETE')
                             @csrf
-                            <button class="btn btn-danger p-task__flex" onclick='return confirm("削除しますか？工事一覧ページで表示されなくなります。");'>{{ __('Go Delete')}}</button>
+                            <button class="btn btn-danger p-task__flex" onclick='return confirm("削除しますか？工事一覧ページで表示されなくなります。");'><i class="fas fa-trash"></i></button>
                         </form>
                         @else
                         <form action="{{ route('tasks.resurrection', $task->id) }}" method="POST" class="">

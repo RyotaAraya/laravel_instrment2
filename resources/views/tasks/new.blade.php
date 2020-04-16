@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="card" style="width:100%;">
-      <div class="card-header">{{ __('Task Register') }}</div>
+      <div class="card-header"><i class="fas fa-hammer"></i>{{ __('Task Register') }}</div>
 
       <div class="card-body">
         <form method="POST" action="{{ route('tasks.create') }}" enctype="multipart/form-data">
