@@ -17,14 +17,13 @@
 
             <div class="p-search__container form-group mt-4 mb-4">
                 <input type="text" class="p-form__search " v-model="keyword" placeholder="Search KeyWord" />
-                <i class="fas fa-search"></i>
             </div>
             <div v-if="filteredTasks.length">
                 <transition-group name="fade" tag="div" class="p-tasks__container" style="list-style: none;">
                     <li class="p-task__list" v-for="(task,index) in filteredTasks" v-bind:key="task.id">
 
                         <a class="p-img__container" :href="`storage/img/${task.picture1}`" data-lightbox="group">
-                        <img class="p-task__img" :src="`storage/img/${task.picture1}`" /></a>
+                            <img class="p-task__img" :src="`storage/img/${task.picture1}`" /></a>
 
                         <div class="p-task__container">
                             <p class="p-task__flex">{{ __('plant_name') }}：@{{task.plant_name}}</p>
