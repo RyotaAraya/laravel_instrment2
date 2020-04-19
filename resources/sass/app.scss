@@ -164,8 +164,8 @@ $breakpoints: (
     justify-content: space-between;
     .p-counter__right {
         margin: 0;
+        font-weight: bold;
         .p-counter__total {
-            font-weight: bold;
         }
     }
 }

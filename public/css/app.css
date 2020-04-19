@@ -11043,9 +11043,6 @@ a.text-dark:focus {
 
 .p-counter__box .p-counter__right {
   margin: 0;
-}
-
-.p-counter__box .p-counter__right .p-counter__total {
   font-weight: bold;
 }
 
