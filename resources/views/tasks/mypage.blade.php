@@ -6,11 +6,7 @@
         <div class="card">
             <div class="p-counter__box p-form__width card-header"><i class="far fa-address-card">{{ __('My Page') }}</i>
                 <!-- 検索数を表示 -->
-                <p class="p-counter__right">
-                    {{ $tasks->firstItem() }} 〜
-                    {{ $tasks->lastItem() }} ／
-                    <a class="p-counter__total">{{ $tasks->total() }} 件</a>
-                </p>
+                @include('partials.tasks-counter')
             </div>
             <div class="p-title__container">
                 <p class="p-title__tag">{{ Auth::user()->name }}さんの仕事一覧</p>

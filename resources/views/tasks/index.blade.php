@@ -4,13 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card">
+            <!-- 検索数を表示 -->
             <div class="p-counter__box p-form__width card-header"><i class="far fa-list-alt">{{ __('Task List') }}</i>
-                <!-- 検索数を表示 -->
-                <p class="p-counter__right">
-                    {{ $tasks->firstItem() }} 〜
-                    {{ $tasks->lastItem() }} ／
-                    <a class="p-counter__total">{{ $tasks->total() }} 件</a>
-                </p>
+                @include('partials.tasks-counter')
             </div>
             <!-- 全件表示リンク vue.js -->
             <div class="p-title__container">
@@ -19,7 +15,6 @@
             </div>
             @if(count($tasks))
             <div name="fade" class="p-tasks__container">
-
                 @foreach($tasks as $task)
                 <div class="p-task__list">
                     <a class="p-img__container" href="storage/img/{{ $task->picture1 }}" data-lightbox="group">
