@@ -90,24 +90,6 @@
             </div>
         </nav>
         <!-- フラッシュメッセージ -->
-        @if (session('scc_message'))
-        <div class="p-message__container p-message__container--success" v-bind:class="{'is-active': isActive}">
-            <i class="fas fa-check-circle p-message__icon"></i>
-            <div class="p-message__text">
-                <p>｛{session('scc_message')}｝</p>
-            </div>
-        </div>
-        @endif
-        @if (session('err_message'))
-        <div class="p-message__container p-message__container--error" v-bind:class="{'is-active': isActive}">
-            <i class="fas fa-exclamation-circle p-message__icon"></i>
-            <div class="p-message__text">
-                <p>｛{session('err_message')}｝</p>
-            </div>
-        </div>
-        @endif
-        <!-- フラッシュメッセージここまで -->
-        <!-- フラッシュメッセージ -->
         @if(session('flash_message'))
         <div class="p-session__flash_message alert alert-primary text-center" role="alert">
             {{ session('flash_message')}}
