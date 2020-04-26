@@ -90,15 +90,15 @@
             </div>
         </nav>
         <!-- フラッシュメッセージ -->
-        @if(session('scc_message'))
+        @if(session('flash_message'))
         <div class="p-session__flash_message alert alert-primary text-center" role="alert">
             {{ session('scc_message')}}
         </div>
         @endif
         <!-- フラッシュメッセージ -->
-        @if(session('err_message'))
+        @if(session('flash_message'))
         <div class="p-session__flash_message alert alert-primary text-center" role="alert">
-            {{ session('err_message')}}
+            {{ session('flash_message')}}
         </div>
         @endif
         <main class="py-4">
