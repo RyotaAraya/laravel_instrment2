@@ -13,9 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::middleware('auth:api')->get('/user', 'TasksController@method');
+
 
 Route::group(['middleware' => 'api'], function(){
     Route::get('get', 'TasksController@getTasks');

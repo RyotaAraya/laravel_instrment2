@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TasksController extends Controller
 {
+    public function home()
+    {
+        return view('home');
+    }
+
     public function getTasks()
     {
         $tasks = Task::where('delete_flg', '=', 0)->get();
