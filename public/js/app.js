@@ -49347,7 +49347,8 @@ var app = new Vue({
   el: "#app",
   data: {
     keyword: "",
-    tasks: []
+    tasks: [],
+    current_slide: 0
   },
   computed: {
     filteredTasks: function filteredTasks() {
@@ -49369,12 +49370,23 @@ var app = new Vue({
       return tasks;
     }
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    setInterval(function () {
+      if (_this.current_slide >= _this.tasks.length - 1) {
+        _this.current_slide = 0;
+      }
+
+      ++_this.current_slide;
+    }, 5000);
+  },
   methods: {
     fetchTasks: function fetchTasks() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("/api/get").then(function (res) {
-        _this.tasks = res.data;
+        _this2.tasks = res.data;
       });
     }
   },

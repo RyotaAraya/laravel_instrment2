@@ -10892,6 +10892,49 @@ a.text-dark:focus {
   max-width: 100%;
 }
 
+.p-home__background {
+  padding: 0;
+  max-width: 100%;
+  height: 40rem;
+}
+
+.p-home__background .p-home__slider .p-tasks__container {
+  display: flex;
+  justify-content: center;
+}
+
+.p-home__background .p-home__slider .p-tasks__container .p-task__list {
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 1139px) {
+  .p-home__background .p-home__slider .p-tasks__container .p-task__list {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.p-home__background .p-home__slider .p-tasks__container .p-task__list .p-img__container {
+  width: 24rem;
+  height: 24rem;
+}
+
+.p-home__background .p-home__btn {
+  max-width: 100%;
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.p-home__background .p-home__btn .p-home__list {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+
 .p-search__container .p-form__search {
   display: block;
   width: 40rem;
@@ -10986,7 +11029,7 @@ a.text-dark:focus {
 }
 
 .p-tasks__non {
-  width: 200px;
+  width: 170px;
   margin: 0 auto;
   padding: 2rem 0;
 }

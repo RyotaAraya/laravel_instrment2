@@ -30,6 +30,44 @@ $breakpoints: (
     width: $layout-width-inner;
     max-width: 100%;
 }
+// home
+.p-home__background {
+    padding: 0;
+    max-width: 100%;
+    height: 40rem;
+    .p-home__slider {
+        .p-tasks__container {
+            display:flex;
+            justify-content: center;
+            .p-task__list{
+                display: flex;
+                justify-content: space-around;
+                border:none;
+                box-shadow: none;
+                @include mq("tab") {
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .p-img__container{
+                    width: 24rem;
+                    height: 24rem;
+                }
+            }
+        }
+    }
+    .p-home__btn{
+        max-width: 100%;
+        width: 30rem;
+        margin: 0 auto;
+        .p-home__list{
+            margin: 2rem 0 0 0;
+            text-align: center;
+        }
+    }
+}
+
 .p-search__container {
     .p-form__search {
         display: block;
@@ -64,7 +102,7 @@ $breakpoints: (
             align-items: center;
         }
         .p-img__container {
-            display:block;
+            display: block;
             width: 18rem;
             height: 18rem;
             line-height: 18rem;
@@ -75,12 +113,12 @@ $breakpoints: (
                 width: 20rem;
                 height: 20rem;
             }
-                .p-task__img {
-                    width: auto;
-                    height: auto;
-                    max-width: 100%;
-                    max-height: 100%;
-                }
+            .p-task__img {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
         .p-task__container {
             display: flex;
@@ -113,7 +151,7 @@ $breakpoints: (
 }
 //タスクがないときに表示する
 .p-tasks__non {
-    width: 200px;
+    width: 170px;
     margin: 0 auto;
     padding: 2rem 0;
 }

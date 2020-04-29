@@ -42,7 +42,8 @@ const app = new Vue({
     el: "#app",
     data: {
         keyword: "",
-        tasks: []
+        tasks: [],
+        current_slide: 0
     },
     computed: {
         filteredTasks: function() {
@@ -66,6 +67,14 @@ const app = new Vue({
             }
             return tasks;
         }
+    },
+    mounted() {
+        setInterval(() => {
+            if (this.current_slide >= (this.tasks.length -1) ) {
+                this.current_slide = 0;
+            }
+            ++this.current_slide;
+        },5000)
     },
     methods: {
         fetchTasks: function() {
