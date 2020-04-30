@@ -11,9 +11,12 @@
 |
 */
 
-
+//ログインしなくてもアクセス可能
+//タスク一覧
 Route::get('/tasks', 'TasksController@index')->name('tasks.index');
+//タスク詳細
 Route::get('/tasks/{id}/details', 'TasksController@details')->name('tasks.details');
+//タスク一覧表示(Vue.Js)
 Route::get('/alltasks', 'TasksController@alltasks')->name('tasks.alltasks');
 
 
@@ -29,4 +32,5 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Auth::routes();
 
+//ルート(本番環境でALBを設定した際、ヘルスチェックでunhealthyとなるため設置)
 Route::get('/', 'TasksController@home')->name('home');

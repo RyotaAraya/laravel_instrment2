@@ -92,12 +92,6 @@
         <!-- フラッシュメッセージ -->
         @if(session('flash_message'))
         <div class="p-session__flash_message alert alert-primary text-center" role="alert">
-            {{ session('scc_message')}}
-        </div>
-        @endif
-        <!-- フラッシュメッセージ -->
-        @if(session('flash_message'))
-        <div class="p-session__flash_message alert alert-primary text-center" role="alert">
             {{ session('flash_message')}}
         </div>
         @endif
