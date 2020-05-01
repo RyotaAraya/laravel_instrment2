@@ -34,15 +34,18 @@ $breakpoints: (
 .p-home__background {
     padding: 0;
     max-width: 100%;
-    height: 40rem;
     .p-home__slider {
+        background: #f1f1f1;
+        background: -moz-linear-gradient(top, #fff, #f1f1f1);
+        background: -webkit-linear-gradient(top, #fff, #f1f1f1);
+        background: linear-gradient(to bottom, #fff, #f1f1f1);
         .p-tasks__container {
-            display:flex;
+            display: flex;
             justify-content: center;
-            .p-task__list{
+            .p-task__list {
                 display: flex;
                 justify-content: space-around;
-                border:none;
+                border: none;
                 box-shadow: none;
                 @include mq("tab") {
                     width: 100%;
@@ -50,22 +53,47 @@ $breakpoints: (
                     justify-content: center;
                     align-items: center;
                 }
-                .p-img__container{
+                .p-img__container {
                     width: 24rem;
                     height: 24rem;
+                    @include mq("tab") {
+                        width: 100%;
+                    }
                 }
             }
         }
     }
-    .p-home__btn{
+    .p-home__btn {
         max-width: 100%;
         width: 30rem;
         margin: 0 auto;
-        .p-home__list{
+        .p-home__list {
             margin: 2rem 0 0 0;
             text-align: center;
+            .p-home__text{
+                display:inline-block;
+            }
+        }
+        .p-nav__first{
+            margin-top: 2rem;
         }
     }
+}
+//fontawesome
+.fa-github {
+    font-size: 28px;
+    padding-left: 4px;
+    padding-right: 6px;
+    color: gray;
+}
+.fa-youtube {
+    font-size: 28px;
+    padding-left: 3px;
+    padding-right: 4px;
+    color: red;
+}
+.p-nav__center {
+    vertical-align: middle;
 }
 
 .p-search__container {
@@ -177,6 +205,9 @@ $breakpoints: (
 }
 .btn-secondary {
     background: #aec1e3;
+}
+.btn-light {
+    background: #e3e3e3;
 }
 
 /*アニメーション*/

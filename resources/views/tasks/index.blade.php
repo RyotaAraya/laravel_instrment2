@@ -10,7 +10,7 @@
             </div>
             <!-- 全件表示リンク vue.js -->
             <div class="p-title__container">
-                <p class="p-title__tag"><a href="{{ route('tasks.alltasks') }}">{{ __('All Tasks') }}</a>
+                <p class="p-title__tag"><a href="{{ route('tasks.alltasks') }}">{{ __('Keyword Search') }}</a>
                 </p>
             </div>
             @if(count($tasks))

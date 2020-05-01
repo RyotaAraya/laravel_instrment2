@@ -1,8 +1,8 @@
 {
-  "Task List": "全工事の一覧",
+  "Task List": "工事の一覧",
   "Tasks Update": "工事編集",
   "Task Details": "工事詳細",
-  "All Tasks": "全工事を表示する",
+  "Keyword Search": "keyword検索する",
   "Go Details": "詳細",
   "Go Update": "編集",
   "Go Delete": "削除",
@@ -21,7 +21,7 @@
 
   "Task Add": "新規工事登録",
   "Task Update": "更新",
-  "Tasks List": "全工事一覧",
+  "Tasks List": "工事一覧",
   "Task Register": "新規工事を登録",
 
   "Login": "ログイン",

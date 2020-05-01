@@ -27,22 +27,33 @@
     </div>
     <div class="p-home__btn">
       <ul class="navbar-nav ml-auto">
-        <p class="p-home__list">ログインせず工事を見たい方はこちら(編集や削除不可)</p>
+        <p class="p-home__list">
+          <span class="p-home__text">ログインせず工事を見たい方はこちら</span>
+          <span class="p-home__text">(ログイン後、編集や削除など可能)</span></p>
         <li class="nav-item">
-          <a class="nav-link btn btn-danger p-task__flex" href="{{ route('tasks.index') }}">{{ __('Task List') }}</a>
+          <a class="nav-link btn btn-secondary p-task__flex" href="{{ route('tasks.index') }}">{{ __('Task List') }}</a>
         </li>
-        @guest
-        @if (Route::has('register'))
-        <p class="p-home__list">ユーザー登録していない方はこちら</p>
+        <li class="nav-item p-nav__first">
+          <a class="nav-link p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
+            <i class="fab fa-github p-nav__center"></i>
+            source code
+          </a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-success p-task__flex" href="{{ route('register') }}">{{ __('Register') }}</a>
+          <a class="nav-link" href="https://qiita.com/ryota_qiita/private/2133612e90b98403d554" target="_blank" rel="noopener">
+            <span class="fa-stack" style="color:#4cb10d">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-search fa-stack-1x fa-inverse fa-2x"></i>
+            </span>
+            制作環境と工程まとめ
+          </a>
         </li>
-        @endif
-        <p class="p-home__list">既に会員の方はこちら</p>
-        <li class="nav-item">
-          <a class="nav-link btn btn-light p-task__flex" href="{{ route('login') }}">{{ __('Login') }}</a>
-        </li>
-        @endguest
+        <!-- <li class="nav-item">
+          <a class="nav-link p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
+            <i class="fab fa-youtube p-nav__center"></i>
+            操作方法
+          </a>
+        </li> -->
       </ul>
     </div>
 

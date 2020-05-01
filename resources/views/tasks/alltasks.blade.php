@@ -16,7 +16,7 @@
             <!-- 検索 -->
 
             <div class="p-search__container form-group mt-4 mb-4">
-                <input type="text" class="p-form__search " v-model="keyword" placeholder="Search KeyWord" />
+                <input type="text" class="p-form__search " v-model="keyword" placeholder="Search Keyword" />
             </div>
             <div v-if="filteredTasks.length">
                 <transition-group name="fade" tag="div" class="p-tasks__container" style="list-style: none;">
