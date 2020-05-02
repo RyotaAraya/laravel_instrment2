@@ -70,11 +70,11 @@ $breakpoints: (
         .p-home__list {
             margin: 2rem 0 0 0;
             text-align: center;
-            .p-home__text{
-                display:inline-block;
+            .p-home__text {
+                display: inline-block;
             }
         }
-        .p-nav__first{
+        .p-nav__first {
             margin-top: 2rem;
         }
     }
@@ -182,6 +182,9 @@ $breakpoints: (
     width: 170px;
     margin: 0 auto;
     padding: 2rem 0;
+    .p-tasks__non__message {
+        margin: 6rem 0;
+    }
 }
 //タイトル用
 .p-title__container {

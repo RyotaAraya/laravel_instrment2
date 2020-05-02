@@ -11070,6 +11070,10 @@ a.text-dark:focus {
   padding: 2rem 0;
 }
 
+.p-tasks__non .p-tasks__non__message {
+  margin: 6rem 0;
+}
+
 .p-title__container .p-title__tag {
   text-align: center;
   margin: 0.4rem;

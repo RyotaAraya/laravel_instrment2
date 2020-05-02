@@ -24,15 +24,28 @@
           </li>
         </transition-group>
       </div>
+      <div v-else class="p-tasks__non">
+        <p class="p-tasks__non__message">工事データがありません</p>
+        <p class="p-tasks__non__message">登録しましょう</p>
+      </div>
     </div>
     <div class="p-home__btn">
       <ul class="navbar-nav ml-auto">
-        <p class="p-home__list">
-          <span class="p-home__text">ログインせず工事を見たい方はこちら</span>
-          <span class="p-home__text">(ログイン後、編集や削除など可能)</span></p>
-        <li class="nav-item">
-          <a class="nav-link btn btn-secondary p-task__flex" href="{{ route('tasks.index') }}">{{ __('Task List') }}</a>
-        </li>
+        <div v-if="tasks.length">
+          <p class="p-home__list">
+            <span class="p-home__text">ログインせず工事を見たい方はこちら</span>
+            <span class="p-home__text">(ログイン後、編集や削除など可能)</span></p>
+          <li class="nav-item">
+            <a class="nav-link btn btn-secondary p-task__flex" href="{{ route('tasks.index') }}">{{ __('Task List') }}</a>
+          </li>
+        </div>
+        <div v-else>
+          <p class="p-home__list">
+            <span class="p-home__text">ユーザー登録済みの方はこちら</span>
+          <li class="nav-item">
+            <a class="nav-link btn btn-secondary p-task__flex" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+        </div>
         <li class="nav-item p-nav__first">
           <a class="nav-link p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
             <i class="fab fa-github p-nav__center"></i>
