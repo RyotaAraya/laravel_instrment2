@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class TasksController extends Controller
 {
@@ -74,7 +75,9 @@ class TasksController extends Controller
             $task->picture1 = 'no_image.png';
         } else {
             //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            $path1 = $request->file('picture1')->store('public/img');
+            //$path1 = $request->file('picture1')->store('public/img');
+            $image1 = $request->file('picture1');
+            $path1 = Storage::disk('s3')->putfile('tasks_image', $image1,'public');
             //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
             $task->picture1 = basename($path1);
         }
@@ -82,7 +85,9 @@ class TasksController extends Controller
             $task->picture2 = 'no_image.png';
         } else {
             //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            $path2 = $request->file('picture2')->store('public/img');
+            //$path2 = $request->file('picture2')->store('public/img');
+            $image2 = $request->file('picture2');
+            $path2 = Storage::disk('s3')->putfile('tasks_image', $image2,'public');
             //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
             $task->picture2 = basename($path2);
         }
@@ -167,39 +172,47 @@ class TasksController extends Controller
             $task->picture1 = 'no_image.png';
         } elseif ($request->file('picture1') != '' && $task->picture1 == 'no_image.png') {
             //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            $path1 = $request->file('picture1')->store('public/img');
+            //$path1 = $request->file('picture1')->store('public/img');
+            $image1 = $request->file('picture1');
+            $path1 = Storage::disk('s3')->putfile('tasks_image', $image1,'public');
             //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
             $task->picture1 = basename($path1);
         } elseif ($request->file('picture1') != '' && $task->picture1 != 'no_image.png') {
             //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            $path1 = $request->file('picture1')->store('public/img');
+            //$path1 = $request->file('picture1')->store('public/img');
+            $image1 = $request->file('picture1');
+            $path1 = Storage::disk('s3')->putfile('tasks_image', $image1,'public');
             //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
             $task->picture1 = basename($path1);
         }
-
 
         if ($request->file('picture2') != '') {
             if ($request->file('picture1') == '' && $task->picture1 == 'no_image.png') {
                 //画像1が空で画像2のリクエストがあったら画像1に入れる
                 //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-                $path1 = $request->file('picture2')->store('public/img');
+                //$path1 = $request->file('picture2')->store('public/img');
+                $image1 = $request->file('picture2');
+                $path1 = Storage::disk('s3')->putfile('tasks_image', $image1,'public');
                 //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
                 $task->picture1 = basename($path1);
             } elseif ($task->picture2 == 'no_image.png') {
                 //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-                $path2 = $request->file('picture2')->store('public/img');
+                //$path2 = $request->file('picture2')->store('public/img');
+                $image2 = $request->file('picture2');
+                $path2 = Storage::disk('s3')->putfile('tasks_image', $image2,'public');
                 //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
                 $task->picture2 = basename($path2);
             } elseif ($task->picture2 != 'no_image.png') {
                 //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-                $path2 = $request->file('picture2')->store('public/img');
+                //$path2 = $request->file('picture2')->store('public/img');
+                $image2 = $request->file('picture2');
+                $path2 = Storage::disk('s3')->putfile('tasks_image', $image2,'public');
                 //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
                 $task->picture2 = basename($path2);
             }
         } else {
             $task->picture2 = 'no_image.png';
         }
-
 
 
 
