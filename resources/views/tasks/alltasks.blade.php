@@ -22,8 +22,8 @@
                 <transition-group name="fade" tag="div" class="p-tasks__container" style="list-style: none;">
                     <li class="p-task__list" v-for="(task,index) in filteredTasks" v-bind:key="task.id">
 
-                        <a class="p-img__container" :href="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/${task.picture1}`" data-lightbox="group">
-                            <img class="p-task__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/${task.picture1}`" /></a>
+                        <a class="p-img__container" :href="`http://image.rarayan.work/tasks_image/${task.picture1}`" data-lightbox="group">
+                            <img class="p-task__img" :src="`http://image.rarayan.work/tasks_image/${task.picture1}`" /></a>
 
                         <div class="p-task__container">
                             <p class="p-task__flex">{{ __('plant_name') }}：@{{task.plant_name}}</p>

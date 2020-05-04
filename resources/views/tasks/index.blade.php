@@ -17,8 +17,8 @@
             <div name="fade" class="p-tasks__container">
                 @foreach($tasks as $task)
                 <div class="p-task__list">
-                    <a class="p-img__container" href="https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/{{ $task->picture1 }}" data-lightbox="group">
-                        <img class="p-task__img" src="https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/{{ $task->picture1 }}" /></a>
+                    <a class="p-img__container" href="http://image.rarayan.work/tasks_image/{{ $task->picture1 }}" data-lightbox="group">
+                        <img class="p-task__img" src="http://image.rarayan.work/tasks_image/{{ $task->picture1 }}" /></a>
                     <div class="p-task__container">
                         <p class="p-task__flex">{{ __('plant_name') }}：{{$task->plant_name}}</p>
                         <p class="p-task__flex">{{ __('tag_no') }}：{{$task->tag_no}}</p>

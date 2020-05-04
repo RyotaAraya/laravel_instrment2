@@ -86,7 +86,7 @@
 
             <div class="col-md-8">
               <label>
-                <img class="img" src="https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/{{ $task->picture1 }}" style="max-width: 100%; height:auto;" /></p>
+                <img class="img" src="http://image.rarayan.work/tasks_image/{{ $task->picture1 }}" style="max-width: 100%; height:auto;" /></p>
                 <input id="picture1" type="file" class="@error('picture1') is-invalid @enderror" name="picture1" value="{{ $task->picture1 }}" autocomplete="picture1"></label>
 
               @error('picture1')
@@ -102,7 +102,7 @@
 
             <div class="col-md-8">
               <label>
-                <img class="img" src="https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" /></p>
+                <img class="img" src="http://image.rarayan.work/tasks_image/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" /></p>
                 <input id="picture2" type="file" class="@error('picture2') is-invalid @enderror" name="picture2" value="{{ $task->picture2 }}" autocomplete="picture2"></label>
 
               @error('picture2')
