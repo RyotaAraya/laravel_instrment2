@@ -61,8 +61,8 @@
           <div for="picture1" class="col-md-3 text-md-right">{{ __('picture1') }}</div>
 
           <div class="col-md-8">
-            <a class="" href="http://image.rarayan.work/tasks_image/{{ $task->picture1 }}" data-lightbox="group">
-              <img class="img" src="http://image.rarayan.work/tasks_image/{{ $task->picture1 }}" style="max-width: 100%; height:auto;" />
+            <a class="" href="https://image.rarayan.work/tasks_image/{{ $task->picture1 }}" data-lightbox="group">
+              <img class="img" src="https://image.rarayan.work/tasks_image/{{ $task->picture1 }}" style="max-width: 100%; height:auto;" />
             </a></p>
           </div>
         </div>
@@ -71,8 +71,8 @@
           <div for="picture2" class="col-md-3 text-md-right">{{ __('picture2') }}</div>
 
           <div class="col-md-8">
-            <a class="" href="http://image.rarayan.work/tasks_image/{{ $task->picture2 }}" data-lightbox="group">
-              <img class="img" src="http://image.rarayan.work/tasks_image/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" />
+            <a class="" href="https://image.rarayan.work/tasks_image/{{ $task->picture2 }}" data-lightbox="group">
+              <img class="img" src="https://image.rarayan.work/tasks_image/{{ $task->picture2 }}" style="max-width: 100%; height:auto;" />
             </a></p>
           </div>
         </div>
