@@ -68,6 +68,8 @@
           </a>
         </li> -->
       </ul>
+      AWS環境について
+      <img src="">
     </div>
 
   </div>
