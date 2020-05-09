@@ -52,7 +52,7 @@
       <!-- 構成 -->
       <div class="p-home__list nav-item">
         <div class=p-img__container>
-          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/md1UFVLVnRpf0xyJQXobE2rSNtqQ44VwP2uAZAYE.png
+          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/inst-img.png
 `" />
         </div>
         <p class="p-task__boder"></p>
@@ -60,7 +60,7 @@
       <!-- git -->
       <div class="p-home__list nav-item">
         <div class=p-img__container>
-          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/fLtVhfBiSGraoj69I7iXvbHHPmf4f04YQqPTQNFU.png
+          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/respon-img.png
 `" />
         </div>
         <a class="p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
@@ -72,7 +72,7 @@
       <!-- 2.開発環境 -->
       <div class="p-home__list nav-item">
         <div class=p-img__container>
-          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/tdFKGonN4qR9cbQWKiw8m8PtIq4zAZLuf3eYoEjg.png
+          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/laravel-img.png
 `" />
         </div>
         <a class="p-task__flex" href="https://qiita.com/ryota_qiita/private/2133612e90b98403d554" target="_blank" rel="noopener">
@@ -87,7 +87,7 @@
       <!-- 3.AWS -->
       <div class="p-home__list nav-item">
         <div class=p-img__container>
-          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/koLeQkaVRGyYNbhyj8VBbOEj5OGJuoyiDW19uNkU.png
+          <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/aws-img.png
 `" />
         </div>
         <a class="p-task__flex" href="https://qiita.com/ryota_qiita/private/d06e36819a7a432403fb" target="_blank" rel="noopener">
