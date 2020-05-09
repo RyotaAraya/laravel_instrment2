@@ -104,7 +104,7 @@ class TasksController extends Controller
             $task->picture2 = 'no_image.png';
         } elseif ($request->file('picture1') == '') {
             // picture1に画像登録した場合
-            // 画像ファイルを変数に取り込む  
+            // 画像ファイルを変数に取り込む
             $imagefile1 = $request->file('picture2');
             // アップロードされたファイル名を取得
             $name1 = $imagefile1->getClientOriginalName();
@@ -122,7 +122,7 @@ class TasksController extends Controller
 
             $task->picture1 = basename($storePath1);
             $task->picture2 = 'no_image.png';
-        }else{
+        } else {
             // picture2に画像登録した場合
             // 画像ファイルを変数に取り込む
             $imagefile2 = $request->file('picture2');
@@ -217,48 +217,75 @@ class TasksController extends Controller
         $task->task_status = $request->task_status;
         $task->delete_flg = 0;
 
+        // ファイル名のタイムスタンプに使う
+        $now = date_format(Carbon::now(), 'YmdHis');
 
+
+        //picture1が未登録の場合
         if ($request->file('picture1') == '' && $task->picture1 == 'no_image.png') {
             $task->picture1 = 'no_image.png';
-        } elseif ($request->file('picture1') != '' && $task->picture1 == 'no_image.png') {
-            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            //$path1 = $request->file('picture1')->store('public/img');
-            $image1 = $request->file('picture1');
-            $path1 = Storage::disk('s3')->putfile('tasks_image', $image1, 'public');
-            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-            $task->picture1 = basename($path1);
-        } elseif ($request->file('picture1') != '' && $task->picture1 != 'no_image.png') {
-            //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-            //$path1 = $request->file('picture1')->store('public/img');
-            $image1 = $request->file('picture1');
-            $path1 = Storage::disk('s3')->putfile('tasks_image', $image1, 'public');
-            //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-            $task->picture1 = basename($path1);
+            //picture1があり、no_imageが格納されてたら
+        } elseif ($request->file('picture1') != '') {
+            // picture1に画像登録した場合
+            // 画像ファイルを変数に取り込む
+            $imagefile1 = $request->file('picture1');
+            // アップロードされたファイル名を取得
+            $name1 = $imagefile1->getClientOriginalName();
+            // S3の保存先のパスを生成
+            $storePath1 = "tasks_image/" . $now . "_" . $name1;
+            // 画像を横幅は400px、縦幅はアスペクト比維持の自動サイズへリサイズ
+            $image1 = Image::make($imagefile1)
+                ->resize(400, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    //サイズが大きくなることを防ぐ
+                    $constraint->upsize();
+                });
+            // S3に保存。ファイル名は$storePathで定義したとおり
+            Storage::disk('s3')->put($storePath1, (string) $image1->encode('png', 90), 'public');
+            $task->picture1 = basename($storePath1);
         }
 
+        //picture2を格納しようとしていて
         if ($request->file('picture2') != '') {
+            //picture1は未格納でもともとno_imgだった場合
             if ($request->file('picture1') == '' && $task->picture1 == 'no_image.png') {
                 //画像1が空で画像2のリクエストがあったら画像1に入れる
-                //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-                //$path1 = $request->file('picture2')->store('public/img');
-                $image1 = $request->file('picture2');
-                $path1 = Storage::disk('s3')->putfile('tasks_image', $image1, 'public');
-                //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-                $task->picture1 = basename($path1);
-            } elseif ($task->picture2 == 'no_image.png') {
-                //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-                //$path2 = $request->file('picture2')->store('public/img');
-                $image2 = $request->file('picture2');
-                $path2 = Storage::disk('s3')->putfile('tasks_image', $image2, 'public');
-                //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-                $task->picture2 = basename($path2);
-            } elseif ($task->picture2 != 'no_image.png') {
-                //画像をpublic下に保存しpathを作成 public/img/xxxx.png
-                //$path2 = $request->file('picture2')->store('public/img');
-                $image2 = $request->file('picture2');
-                $path2 = Storage::disk('s3')->putfile('tasks_image', $image2, 'public');
-                //画像のpathをデータベースに保存 ,パス名を変更 storage/img/xxx.png,データベースにpath名で保存
-                $task->picture2 = basename($path2);
+                $imagefile1 = $request->file('picture2');
+                // アップロードされたファイル名を取得
+                $name1 = $imagefile1->getClientOriginalName();
+                // S3の保存先のパスを生成
+                $storePath1 = "tasks_image/" . $now . "_" . $name1;
+                // 画像を横幅は400px、縦幅はアスペクト比維持の自動サイズへリサイズ
+                $image1 = Image::make($imagefile1)
+                    ->resize(400, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        //サイズが大きくなることを防ぐ
+                        $constraint->upsize();
+                    });
+                // S3に保存。ファイル名は$storePathで定義したとおり
+                Storage::disk('s3')->put($storePath1, (string) $image1->encode('png', 90), 'public');
+
+                $task->picture1 = basename($storePath1);
+                $task->picture2 = 'no_image.png';
+            } else {
+                // picture2に画像登録した場合
+                // 画像ファイルを変数に取り込む
+                $imagefile2 = $request->file('picture2');
+                // アップロードされたファイル名を取得
+                $name1 = $imagefile2->getClientOriginalName();
+                // S3の保存先のパスを生成
+                $storePath2 = "tasks_image/" . $now . "_" . $name1;
+                // 画像を横幅は400px、縦幅はアスペクト比維持の自動サイズへリサイズ
+                $image1 = Image::make($imagefile2)
+                    ->resize(400, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        //サイズが大きくなることを防ぐ
+                        $constraint->upsize();
+                    });
+                // S3に保存。ファイル名は$storePathで定義したとおり
+                Storage::disk('s3')->put($storePath2, (string) $image1->encode('png', 90), 'public');
+
+                $task->picture2 = basename($storePath2);
             }
         } else {
             $task->picture2 = 'no_image.png';
