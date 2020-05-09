@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@include('layouts.header')
+
 @section('content')
 <div class="p-home__container">
   <div class="p-home__background">
@@ -41,7 +43,7 @@
           <p class="p-home__list">
             <span class="p-home__text">ユーザー登録済みの方はこちら</span>
             <li class="nav-item">
-              <a class="nav-link btn btn-secondary p-task__flex" href="{{ route('login') }}">{{ __('Login') }}</a>
+              <a class="nav-link btn btn-secondary" href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
         </div>
       </ul>
@@ -53,8 +55,7 @@
           <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/md1UFVLVnRpf0xyJQXobE2rSNtqQ44VwP2uAZAYE.png
 `" />
         </div>
-        <p class="nav-link p-task__flex">
-        </p>
+        <p class="p-task__boder"></p>
       </div>
       <!-- git -->
       <div class="p-home__list nav-item">
@@ -62,10 +63,11 @@
           <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/fLtVhfBiSGraoj69I7iXvbHHPmf4f04YQqPTQNFU.png
 `" />
         </div>
-        <a class="nav-link p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
+        <a class="p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
           <i class="fab fa-github p-nav__center"></i>
           source code
         </a>
+        <p class="p-task__boder"></p>
       </div>
       <!-- 2.開発環境 -->
       <div class="p-home__list nav-item">
@@ -73,13 +75,14 @@
           <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/tdFKGonN4qR9cbQWKiw8m8PtIq4zAZLuf3eYoEjg.png
 `" />
         </div>
-        <a class="nav-link p-task__flex" href="https://qiita.com/ryota_qiita/private/2133612e90b98403d554" target="_blank" rel="noopener">
+        <a class="p-task__flex" href="https://qiita.com/ryota_qiita/private/2133612e90b98403d554" target="_blank" rel="noopener">
           <span class="fa-stack" style="color:#4cb10d">
             <i class="fa fa-square fa-stack-2x"></i>
             <i class="fa fa-search fa-stack-1x fa-inverse fa-2x"></i>
           </span>
           開発環境と工程まとめ
         </a>
+        <p class="p-task__boder"></p>
       </div>
       <!-- 3.AWS -->
       <div class="p-home__list nav-item">
@@ -87,15 +90,18 @@
           <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/koLeQkaVRGyYNbhyj8VBbOEj5OGJuoyiDW19uNkU.png
 `" />
         </div>
-        <a class="nav-link p-task__flex non" href="https://qiita.com/ryota_qiita/private/d06e36819a7a432403fb" target="_blank" rel="noopener">
+        <a class="p-task__flex" href="https://qiita.com/ryota_qiita/private/d06e36819a7a432403fb" target="_blank" rel="noopener">
           <span class="fa-stack" style="color:#4cb10d">
             <i class="fa fa-square fa-stack-2x"></i>
             <i class="fa fa-search fa-stack-1x fa-inverse fa-2x"></i>
           </span>
           AWSで本番環境構築
         </a>
+        <p class="p-task__boder"></p>
       </div>
     </div>
   </div>
 </div>
 @endsection
+
+@include('layouts.footer')

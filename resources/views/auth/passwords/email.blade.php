@@ -1,4 +1,7 @@
+<!-- ResetPassword送付ページ -->
 @extends('layouts.app')
+
+@include('layouts.header')
 
 @section('content')
 <div class="container">
@@ -45,3 +48,5 @@
     </div>
 </div>
 @endsection
+
+@include('layouts.footer')

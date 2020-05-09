@@ -26,6 +26,62 @@ $breakpoints: (
         @content;
     }
 }
+////////////////////////////////////////////////////////////////////
+//        layout
+////////////////////////////////////////////////////////////////////
+// footerを最下部に配置している
+.l-html {
+    height: 100%;
+    .l-body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        .l-main__content {
+            flex: 1;
+        }
+    }
+}
+.l-footer {
+    padding-top: 5px;
+    width: 100%;
+    height: 3rem;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: flex-end;
+    .l-footer__icon {
+        list-style: none;
+        padding: 0;
+        margin: 0 2rem 0 0;
+        .l-footer__list {
+            display: inline-block;
+            text-align: center;
+            :hover {
+                opacity: 0.8;
+            }
+            .l-footer__link {
+                display: block;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                &.l-footer__wantedly {
+                    margin-left: 12px;
+                    width: 26px;
+                    height: 26px;
+                    line-height: 24px;
+                    background: #00a4bb;
+                    padding-left: 6px;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: bold;
+                    border-radius: 10%;
+                }
+            }
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////
 .p-form__width {
     width: $layout-width-inner;
     max-width: 100%;
@@ -90,13 +146,13 @@ $breakpoints: (
         .p-home__list {
             margin: 8rem 0;
             .p-task__flex {
+                display: block;
+                width: 200px;
+                margin: 6rem auto 1rem auto;
+            }
+            .p-task__boder {
+                margin-top: 2rem;
                 border-bottom: solid 1px #e0e0e0;
-                text-align: center;
-                margin: 4rem 0;
-                padding-bottom: 4rem;
-                &.non{
-                    border-bottom: none;
-                }
             }
             .p-img__container {
                 .p-home__img {
