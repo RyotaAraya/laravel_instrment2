@@ -96,6 +96,7 @@ class TasksController extends Controller
             // S3に保存。ファイル名は$storePathで定義したとおり
             Storage::disk('s3')->put($storePath1, (string) $image1->encode('png', 90), 'public');
 
+
             $task->picture1 = basename($storePath1);
         }
 

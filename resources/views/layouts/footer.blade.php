@@ -1,6 +1,7 @@
 @section('footer')
 <footer class="l-footer">
     <ul class="l-footer__icon animate pull-right">
+        Araya
         <!-- git icon -->
         <li class="l-footer__list">
             <a class="l-footer__link" href="https://github.com/RyotaAraya" title="github" target="_blank" rel="noopener">

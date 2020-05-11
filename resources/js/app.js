@@ -74,7 +74,7 @@ const app = new Vue({
                 this.current_slide = 0;
             }
             ++this.current_slide;
-        },5000)
+        },6000)
     },
     methods: {
         fetchTasks: function() {
