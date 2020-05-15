@@ -5,7 +5,13 @@
         <!-- git icon -->
         <li class="l-footer__list">
             <a class="l-footer__link" href="https://github.com/RyotaAraya" title="github" target="_blank" rel="noopener">
-                <i class="fab fa-github p-nav__center"></i>
+                <i class="fab fa-github footer p-nav__center"></i>
+            </a>
+        </li>
+        <!-- youtube icon -->
+        <li class="l-footer__list">
+            <a class="l-footer__link l-footer__youtube" href="https://www.youtube.com/channel/UCj0JNjk1O1lxANpI1B4wW2w" title="youtube" target="_blank" rel="noopener">
+                <i class="fab fa-youtube footer"></i>
             </a>
         </li>
         <!-- qiita icon -->

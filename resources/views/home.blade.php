@@ -69,8 +69,8 @@
 `" />
         </div>
         <a class="p-task__flex" href="https://www.youtube.com/watch?v=1EHorHgucnM" target="_blank" rel="noopener">
-        <i class="fab fa-youtube"></i>
-        操作動画
+          <i class="fab fa-youtube"></i>
+          操作動画
         </a>
         <p class="p-task__boder"></p>
       </div>

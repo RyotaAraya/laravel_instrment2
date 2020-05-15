@@ -168,12 +168,18 @@ $breakpoints: (
     padding-left: 4px;
     padding-right: 6px;
     color: gray;
+    &.footer{
+        margin-right: 16px;
+    }
 }
 .fa-youtube {
     font-size: 28px;
-    padding-left: 3px;
-    padding-right: 4px;
+    margin-right: 3px;
     color: red;
+    vertical-align: middle;
+    &.footer{
+        margin-right: 8px;
+    }
 }
 .p-nav__center {
     vertical-align: middle;
