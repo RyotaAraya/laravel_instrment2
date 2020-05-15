@@ -55,17 +55,22 @@
           <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/inst-img.png
 `" />
         </div>
+        <a class="p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
+          <i class="fab fa-github p-nav__center"></i>
+          source code
+        </a>
         <p class="p-task__boder"></p>
       </div>
-      <!-- git -->
+
+      <!-- youtube -->
       <div class="p-home__list nav-item">
         <div class=p-img__container>
           <img class="p-home__img" :src="`https://instrment-aws-infra.s3-ap-northeast-1.amazonaws.com/tasks_image/respon-img.png
 `" />
         </div>
-        <a class="p-task__flex" href="https://github.com/RyotaAraya/laravel_instrment2" target="_blank" rel="noopener">
-          <i class="fab fa-github p-nav__center"></i>
-          source code
+        <a class="p-task__flex" href="https://www.youtube.com/watch?v=1EHorHgucnM" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+        操作動画
         </a>
         <p class="p-task__boder"></p>
       </div>
