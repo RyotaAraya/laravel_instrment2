@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/tasks/{id}/delete', 'TasksController@destroy')->name('tasks.delete');
     Route::post('/tasks/{id}/resurrection', 'TasksController@resurrection')->name('tasks.resurrection');
     Route::get('/mypage', 'TasksController@mypage')->name('tasks.mypage');
+    //管理者画面
+    Route::get('/admi', 'TasksController@admi')->name('tasks.admi');
 });
 Auth::routes();
 

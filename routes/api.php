@@ -22,5 +22,4 @@ Route::middleware('auth:api')->get('/user', 'TasksController@method');
 
 Route::group(['middleware' => 'api'], function(){
     Route::get('get', 'TasksController@getTasks');
-
 });

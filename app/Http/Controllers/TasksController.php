@@ -80,7 +80,7 @@ class TasksController extends Controller
             $task->picture1 = 'no_image.png';
         } else {
             // picture1に画像登録した場合
-            // 画像ファイルを変数に取り込む  
+            // 画像ファイルを変数に取り込む
             $imagefile1 = $request->file('picture1');
             // アップロードされたファイル名を取得
             $name1 = $imagefile1->getClientOriginalName();
