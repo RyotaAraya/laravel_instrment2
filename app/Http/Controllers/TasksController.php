@@ -38,6 +38,12 @@ class TasksController extends Controller
         //Log::debug(print_r($tasks, true));
         return view('tasks.index', ['tasks' => $tasks]);
     }
+    public function scroll()
+    {
+        $tasks = Task::where('delete_flg', '=', 0);
+        //Log::debug(print_r($tasks, true));
+        return view('tasks.scroll', ['tasks' => $tasks]);
+    }
     public function mypage()
     {
         //ログインしているユーザーが作成したタスクを取得する

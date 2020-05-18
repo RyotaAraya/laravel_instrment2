@@ -19,6 +19,9 @@ Route::get('/tasks/{id}/details', 'TasksController@details')->name('tasks.detail
 //タスク一覧表示(Vue.Js)
 Route::get('/alltasks', 'TasksController@alltasks')->name('tasks.alltasks');
 
+//タスクをスクロールで表示する仮
+Route::get('/scroll', 'TasksController@scroll')->name('tasks.scroll');
+
 
 //ログインしないとアクセスできないようにする(認証middleware auth)
 Route::group(['middleware' => 'auth'], function () {
