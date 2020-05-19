@@ -19,6 +19,7 @@ window.Vue = require('vue');
 
 })();
 
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -43,7 +44,10 @@ const app = new Vue({
     data: {
         keyword: "",
         tasks: [],
-        current_slide: 0
+        current_slide: 0,
+        itemLoading: false,
+        page: 1,
+        load: true,
     },
     computed: {
         filteredTasks: function() {

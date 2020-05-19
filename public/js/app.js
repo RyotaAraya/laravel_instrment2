@@ -49348,7 +49348,10 @@ var app = new Vue({
   data: {
     keyword: "",
     tasks: [],
-    current_slide: 0
+    current_slide: 0,
+    itemLoading: false,
+    page: 1,
+    load: true
   },
   computed: {
     filteredTasks: function filteredTasks() {

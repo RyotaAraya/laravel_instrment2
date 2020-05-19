@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "vue-infinite-loading": "^2.4.5",
         "vue-paginate": "^3.6.0"
     }
 }
