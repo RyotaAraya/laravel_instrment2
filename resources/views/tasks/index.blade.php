@@ -11,8 +11,10 @@
             </div>
             <!-- 全件表示リンク vue.js -->
             <div class="p-title__container">
-                <p class="p-title__tag"><a href="{{ route('tasks.alltasks') }}">{{ __('Keyword Search') }}</a>
-                </p>
+                <span class="p-title__tag"><a href="{{ route('tasks.alltasks') }}">{{ __('Keyword Search') }}</a>
+                </span>
+                <span class="p-title__tag"><a href="{{ route('tasks.scroll') }}">{{ __('Scroll Page') }}</a>
+                </span>
             </div>
             @if(count($tasks))
             <div name="fade" class="p-tasks__container">

@@ -3,6 +3,7 @@
   "Tasks Update": "工事編集",
   "Task Details": "工事詳細",
   "Keyword Search": "keyword検索する",
+  "Scroll Page": "無限スクロールのページへ",
   "Go Details": "詳細",
   "Go Update": "編集",
   "Go Delete": "削除",
@@ -19,6 +20,7 @@
   "task_createdate": "通知日時",
   "task_updatedate": "更新日時",
 
+  "ScrollPage": "スクロールページ",
   "Task Add": "新規工事登録",
   "Task Update": "更新",
   "Tasks List": "工事一覧",

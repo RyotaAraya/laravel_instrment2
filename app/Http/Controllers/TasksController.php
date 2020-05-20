@@ -40,7 +40,7 @@ class TasksController extends Controller
     }
     public function scroll()
     {
-        $tasks = Task::where('delete_flg', '=', 0)->paginate(5);
+        $tasks = Task::where('delete_flg', '=', 0)->paginate(6);
         //$tasks = Task::where('delete_flg', '=', 0)->paginate(5);
         //$tasks = Task::where('delete_flg', '=', 0)->get();
         //Log::debug(print_r($tasks, true));
